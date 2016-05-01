@@ -1,0 +1,33 @@
+{% extends "common/base.html" %}
+{% load staticfiles %}
+{% block css %}
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="{% static "slider/nouislider.css" %}" charset="utf-8">
+<link rel="stylesheet" href="{% static "slider/nouislider.pips.css" %}" charset="utf-8">
+<link rel="stylesheet" href="{% static "slider/nouislider.tooltips.css" %}" charset="utf-8">
+<link rel="stylesheet" href="{% static "common/css/base.css" %}" charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="{% static "slider/nouislider.js" %}" charset="utf-8"></script>
+<style media="screen">
+    #slider {
+        height: 40ex;
+    }
+</style>
+{% endblock css %}
+{% block js %}
+{% endblock js %}
+{% block content %}
+<body>
+    {% include "common/navbar.html" %}
+    <div class="jumbotron">
+      <h1>Evented</h1>
+      <p>Create events or find some around you.</p>
+      <p>It is necessary to allow geolocation for this app to work.</p>
+      <p><a class="btn btn-primary btn-lg" href="{% url 'map' %}" role="button">Find some!</a></p>
+    </div>
+
+</body>
+
+{% endblock %}

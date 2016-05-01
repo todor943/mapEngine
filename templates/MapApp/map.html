@@ -1,0 +1,31 @@
+{% extends "common/base.html" %}
+{% load staticfiles %}
+
+{% block css%}
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static "common/css/base.css" %}" charset="utf-8">
+<link rel="stylesheet" href="{% static "map/css/main.css" %}" charset="utf-8">
+<link rel="stylesheet" href="{% static "slider/nouislider.css" %}" charset="utf-8">
+<link rel="stylesheet" href="{% static "slider/nouislider.pips.css" %}" charset="utf-8">
+<link rel="stylesheet" href="{% static "slider/nouislider.tooltips.css" %}" charset="utf-8">
+{% endblock %}
+
+{% block javascript %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    document.eventApiLocation = "/api/";
+</script>
+<script src="{% static "common/js/jsCookie.js" %}" charset="utf-8"></script>
+<script>csrftoken = Cookies.get('csrftoken');</script>
+<script src="{% static "map/javascript/run.js" %}" charset="utf-8"></script>
+<script src="{% static "slider/nouislider.js" %}" charset="utf-8"></script>
+{% endblock %}
+
+{% block content %}
+{% include "common/navbar.html" %}
+<div id="map"></div>
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdr_iuWN0OHCR08ERH7DQ2MTLXp3etZ-E">
+</script>
+{% endblock %}

@@ -1,0 +1,5 @@
+<form method="post" action="">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input class="btn btn-primary btn-lg" type="submit" value="Send" />
+</form>

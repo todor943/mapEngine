@@ -1,0 +1,37 @@
+{% extends "common/base.html" %}
+{% load staticfiles %}
+
+{% block css%}
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static "common/css/base.css" %}" charset="utf-8">
+<link rel="stylesheet" href="{% static "map/css/main.css" %}" charset="utf-8">
+{% endblock %}
+
+{% block javascript %}
+<script src="https://code.jquery.com/jquery-2.2.3.js"   integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4="   crossorigin="anonymous"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    document.eventApiLocation = "{{apiUrl}}"
+</script>
+{% if mapOptions %}
+<script>
+    var preloadedMap = {{mapOptions|safe}};
+</script>
+{% endif %}
+<script src="{% static "common/js/jsCookie.js" %}" charset="utf-8"></script>
+<script>csrftoken = Cookies.get('csrftoken');</script>
+<script src="{% static "map/javascript/addJs.js" %}" charset="utf-8"></script>
+{{ form.media }}
+{% endblock %}
+
+{% block content %}
+{% include "common/navbar.html" %}
+<div class="col-md-6" id="map"></div>
+<div class="col-md-6" id="eventForm">
+    {% include "MapApp/eventForm.html" %}
+</div>
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdr_iuWN0OHCR08ERH7DQ2MTLXp3etZ-E">
+</script>
+{% endblock %}
