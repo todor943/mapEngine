@@ -48,7 +48,7 @@ class MapEntity(models.Model):
         self.geoLocationField = GEOSGeometry('POINT(' + str(lng)  + ' '+ str(lat)  + ')', srid=4326)
 
     # json encode maybe?!
-    def __unicode__(self):
+    def __str__(self):
         return str(self.entityName)
 
 
