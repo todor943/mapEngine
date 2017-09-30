@@ -10,7 +10,7 @@ import uuid
 class EventType(models.Model):
     name = models.CharField(null=False, max_length=30)
 
-    def __unicode__(self):
+    def __str__(self):
         return str(self.name)
 
 class MapEntity(models.Model):

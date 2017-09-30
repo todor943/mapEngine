@@ -1,5 +1,6 @@
 from django.shortcuts import *
 from django.core import *
+import django.core.serializers
 from django.http import *
 from django.views.generic import *
 from django.contrib.gis.serializers import geojson
@@ -16,7 +17,7 @@ import MapApp
 
 class ApiView(View):
     def get(self, request):
-        data = serializers.serialize("geojson", MapApp.models.MapEntity.objects.all())
+        data = django.core.serializers.serialize("geojson", MapApp.models.MapEntity.objects.all())
         return HttpResponse(data)
 
     def post(self, request, *args, **kwargs):
@@ -31,7 +32,7 @@ class ApiView(View):
             radius = requestData['radius']
             searchPnt = self.locationToPoint(requestData['position']);
             data =  MapApp.models.MapEntity.objects.filter(geoLocationField__distance_lte=(searchPnt, radius))
-            data = serializers.serialize("geojson", data)
+            data = django.core.serializers.serialize("geojson", data)
             print ("Updated the user's map state in session")
         # print request.user.get_username()
         return HttpResponse(data)
