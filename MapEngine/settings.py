@@ -33,7 +33,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+SPATIALITE_LIBRARY_PATH = 'mod_spatialite'
 # Application definition
 
 INSTALLED_APPS = (
