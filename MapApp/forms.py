@@ -1,5 +1,5 @@
 from django import forms
-from models import MapEntity
+from .models import MapEntity
 from django.contrib.auth.models import User;
 from django.forms import ModelForm
 from datetimewidget.widgets import DateTimeWidget

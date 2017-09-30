@@ -43,7 +43,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'debug_toolbar',
+    # 'debug_toolbar',
     'django.contrib.gis',
     'MapApp'
 )
@@ -57,7 +57,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
+    # 'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 
 ROOT_URLCONF = 'MapEngine.urls'
@@ -83,14 +83,16 @@ WSGI_APPLICATION = 'MapEngine.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
+PROJECT_PATH = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 
 DATABASES = {
     'default': {
-        'ENGINE' : 'django.contrib.gis.db.backends.postgis',
-        'HOST' : 'localhost',
-        'NAME': 'djangoDb',
-        'USER': 'postgres',
-        'PASSWORD': 'master'
+        'ENGINE' : 'django.contrib.gis.db.backends.spatialite',
+        'NAME': os.path.join(PROJECT_PATH, 'db.sqlite'),
+        # 'HOST' : 'localhost',
+        # 'NAME': 'djangoDb',
+        # 'USER': 'postgres',
+        # 'PASSWORD': 'master'
     }
 }
 

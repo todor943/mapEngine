@@ -32,7 +32,7 @@ class ApiView(View):
             searchPnt = self.locationToPoint(requestData['position']);
             data =  MapApp.models.MapEntity.objects.filter(geoLocationField__distance_lte=(searchPnt, radius))
             data = serializers.serialize("geojson", data)
-            print "Updated the user's map state in session"
+            print ("Updated the user's map state in session")
         # print request.user.get_username()
         return HttpResponse(data)
 

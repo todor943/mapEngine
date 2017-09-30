@@ -11,7 +11,7 @@ class EventType(models.Model):
     name = models.CharField(null=False, max_length=30)
 
     def __unicode__(self):
-        return unicode(self.name)
+        return str(self.name)
 
 class MapEntity(models.Model):
     # Name and type are required
@@ -49,7 +49,7 @@ class MapEntity(models.Model):
 
     # json encode maybe?!
     def __unicode__(self):
-        return unicode(self.entityName)
+        return str(self.entityName)
 
 
 class Player(models.Model):
