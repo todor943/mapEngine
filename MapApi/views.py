@@ -11,7 +11,6 @@ import time
 from django.contrib.auth.decorators import *
 from django.contrib.auth import *
 import json
-from .models import *
 import MapApp
 
 

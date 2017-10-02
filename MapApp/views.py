@@ -11,8 +11,13 @@ from django.contrib.auth import *
 from django.utils.decorators import *
 from django.core.urlresolvers import reverse
 import json
-from .forms import *
-from .models import *
+# from .forms import *
+from MapApp.forms import *
+from MapApp.models import *
+# from .models import *
+from django.contrib.auth.models import AbstractUser, UserManager
+from django.contrib.auth.hashers import make_password
+
 
 class LoginView(View):
     def get(self, request):
@@ -24,11 +29,19 @@ class LoginView(View):
             return redirect('index')
 
     def post(self, request):
-        usn = request.POST['username']
-        psw = request.POST['password']
-        user = authenticate(username=usn, password=psw)
-        if user is not None:
-            login(request, user)
+        f = LoginForm(request.POST or None)
+        if f.is_valid():
+            user = authenticate(request, \
+                username = f.cleaned_data['username'], \
+                password = f.cleaned_data['password'])
+            if user is not None :
+                login(request, user)
+        # usn = request.POST['username']
+        # psw = request.POST['password']
+        # # psw = make_password(psw)
+        # user = authenticate(request, username=usn, password=psw)
+        # if user is not None:
+        #     login(request, user)
         return redirect('index')
 
 class LogoutView(View):
@@ -84,7 +97,7 @@ class NewEventView(View):
         return render(request, 'MapApp/newEvent.html', context)
 
 
-class RegisterView(View):
+class RegisterView(AbstractUser, View):
     def get(self, request):
         if request.user.is_authenticated():
             redirect('map');
@@ -102,10 +115,7 @@ class RegisterView(View):
         context = {'form':f}
 
         if f.is_valid():
-            f.save()
-            userInstance = f.save(commit=False)
-            userInstance.backend = 'django.contrib.auth.backends.ModelBackend'
-            userInstance.save()
+            userInstance = f.save()
             pprint.pprint('valid user making')
             login(request, userInstance)
             return redirect('map')

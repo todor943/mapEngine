@@ -44,7 +44,7 @@ function addSliderControl(map) {
         start: [ 200 ],
         range: {
             'min': [  50 ],
-            'max': [ 3000 ]
+            'max': [ 1000 ]
         },
         connect: 'lower',
         orientation: 'vertical',

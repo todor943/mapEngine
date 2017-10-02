@@ -28,8 +28,8 @@ class MapEntity(models.Model):
     publishDate = models.DateTimeField(null=False, auto_now_add=True)
 
     # time markers for start/end -> can be edited prior to start time
-    startDate = models.DateTimeField(null=True, blank=False)
-    endDate = models.DateTimeField(null=True, blank=True)
+    # startDate = models.DateTimeField(null=True, blank=False)
+    # endDate = models.DateTimeField(null=True, blank=True)
 
     # auto update on last save
     lastModDate = models.DateTimeField(null=True, auto_now=True)
