@@ -12,12 +12,12 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-try:
-    import psycopg2
-except ImportError:
-    # Fall back to psycopg2-ctypes
-    from psycopg2cffi import compat
-    compat.register()
+# try:
+#     import psycopg2
+# except ImportError:
+#     # Fall back to psycopg2-ctypes
+#     from psycopg2cffi import compat
+#     compat.register()
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -31,7 +31,7 @@ SECRET_KEY = 'k2bme$82rqch#dc)5vn29mas76338=qhr@33ur(8ht+t($a&u2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['drtodor.mooo.com']
 
 SPATIALITE_LIBRARY_PATH = 'mod_spatialite'
 # Application definition
