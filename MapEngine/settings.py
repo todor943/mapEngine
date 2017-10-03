@@ -31,7 +31,7 @@ SECRET_KEY = 'k2bme$82rqch#dc)5vn29mas76338=qhr@33ur(8ht+t($a&u2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['drtodor.mooo.com']
+ALLOWED_HOSTS = ['drtodor.mooo.com', 'kukavica.chickenkiller.com', '139.59.201.128', '139.59.201.129']
 
 SPATIALITE_LIBRARY_PATH = 'mod_spatialite'
 # Application definition

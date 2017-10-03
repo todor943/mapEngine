@@ -2,6 +2,8 @@ from django.conf.urls import url
 
 from . import views
 from .views import *
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 
 urlpatterns = [
     # url(r'^$', views.MapView.as_view(), name='index'),
@@ -13,3 +15,5 @@ urlpatterns = [
     url(r'^manage/$', views.MyEvents.as_view(), name='manage'),
     url(r'^newEvent/$', views.NewEventView.as_view(), name='newEventUrl'),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
