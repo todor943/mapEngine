@@ -66,6 +66,9 @@ function addButtonsControl(map) {
         "btn btn-danger glyphicon glyphicon-heart"
     ];
     buttonOne.title = "RED";
+    buttonOne.onclick = function(){
+        sendApiPost("button1")
+    };
 
     var buttonTwo = document.createElement('button');
     buttonTwo.type = "button";
@@ -74,6 +77,9 @@ function addButtonsControl(map) {
         "btn btn-primary glyphicon glyphicon-star"
     ];
     buttonTwo.title = "BLUE";
+    buttonTwo.onclick = function(){
+        sendApiPost("button2")
+    };
 
     var buttonThree = document.createElement('button');
     buttonThree.type = "button";
@@ -82,6 +88,9 @@ function addButtonsControl(map) {
         "btn btn-success glyphicon glyphicon-grain"
     ];
     buttonThree.title = "GREEN";
+    buttonThree.onclick = function(){
+        sendApiPost("button3")
+    };
     
     controlDiv.appendChild(buttonOne);
     controlDiv.appendChild(buttonTwo);
@@ -104,7 +113,7 @@ function initMap() {
     });
 
     addSliderControl(map);
-    addButtonsControl(map)
+    addButtonsControl(map);
 
     map.addListener('zoom_changed', captureMapState);
     map.addListener('center_changed', captureMapState);
@@ -244,6 +253,43 @@ function fetchEvents() {
             radius : distance
         }));
 }
+
+function sendApiPost(data) {
+    tokenKey = document.authToken
+    entityType = data
+
+    var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+          handleResult(xhttp.responseText)
+        }
+      }
+
+    xhttp.open("POST", document.eventApiLocation+"event", true);
+    // xhttp.open("POST", "http://127.0.0.1:8000" + document.eventApiLocation, true);
+    xhttp.setRequestHeader("Content-type", "application/json");
+    xhttp.setRequestHeader("X-CSRFToken", csrftoken);
+    xhttp.setRequestHeader("Authorization", "Token " + tokenKey.toString() )
+    xhttp.send(JSON.stringify(
+        {
+            lat : playerPosition.coords.latitude,
+            lng : playerPosition.coords.longitude,
+            entityType : data
+        }));
+}
+
+
+// function button1(){
+//     sendApiPost("button1");    
+// }
+
+// function button2(){
+//     sendApiPost("button2");    
+// } 
+
+// function button3(){
+//     sendApiPost("button3");    
+// }
 
 function handleResult(result) {
     var data = JSON.parse(result);

@@ -65,7 +65,13 @@ class LogoutView(View):
 class MapView(View):
     def get(self, request):
         # pprint.pprint(reverse('map'))
-        return render(request, 'MapApp/map.html')
+        if request.user.is_authenticated():
+            tokenUser = request.user
+            token = Token.objects.get(user=tokenUser)
+            token.key
+        return render(request, 'MapApp/map.html', {
+            "authToken" : token.key
+        })
 
 
 @method_decorator(login_required, name='dispatch')

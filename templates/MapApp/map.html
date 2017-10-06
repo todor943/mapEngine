@@ -15,9 +15,11 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script type="text/javascript">
     document.eventApiLocation = "/api/";
+    document.authToken = "{{ authToken }}"
 </script>
 <script src="{% static "common/js/jsCookie.js" %}" charset="utf-8"></script>
 <script>csrftoken = Cookies.get('csrftoken');</script>
+
 <script src="{% static "map/javascript/run.js" %}" charset="utf-8"></script>
 <script src="{% static "slider/nouislider.js" %}" charset="utf-8"></script>
 {% endblock %}

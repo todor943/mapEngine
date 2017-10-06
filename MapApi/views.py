@@ -37,6 +37,8 @@ class FakeApiView(View):
         if request.user.is_authenticated():
             requestData = json.loads(request.POST['jsonData'])
             now = time.time()
+            if 'position' not in requestData:
+                return JsonResponse({})
             request.session['location'] = requestData['position']
             request.session['mapOptions'] = requestData['mapOptions']
             request.session['lastUpdate'] = time.time()

@@ -15,7 +15,7 @@ DATABASES	../MapEngine/settings.py	/^DATABASES = {$/;"	kind:variable	line:105
 DEBUG	../MapEngine/settings.py	/^DEBUG = True$/;"	kind:variable	line:32
 DEBUG_TOOLBAR_CONFIG	../MapEngine/settings.py	/^DEBUG_TOOLBAR_CONFIG = {$/;"	kind:variable	line:140
 EventDetail	../MapApp/views.py	/^class EventDetail(View):$/;"	kind:class	line:144
-EventQuery	../MapApi/rest.py	/^class EventQuery(APIView):$/;"	kind:class	line:60
+EventQuery	../MapApi/rest.py	/^class EventQuery(APIView):$/;"	kind:class	line:66
 EventType	../MapApp/models.py	/^class EventType(Model):$/;"	kind:class	line:22
 FakeApiView	../MapApi/views.py	/^class FakeApiView(View):$/;"	kind:class	line:29
 INSTALLED_APPS	../MapEngine/settings.py	/^INSTALLED_APPS = ($/;"	kind:variable	line:44
@@ -93,7 +93,7 @@ fields	../MapApp/migrations/0001_initial.py	/^            fields=[$/;"	kind:vari
 fields	../MapApp/migrations/0004_registerview.py	/^            fields=[$/;"	kind:variable	line:22
 forms.py	../MapApp/forms.py	1;"	kind:file	line:1
 geoLocationField	../MapApp/models.py	/^    geoLocationField = PointField(srid=4326)$/;"	kind:variable	line:41
-get	../MapApi/rest.py	/^    def get(self, request, format=None):$/;"	kind:member	line:67
+get	../MapApi/rest.py	/^    def get(self, request, format=None):$/;"	kind:member	line:73
 get	../MapApi/views.py	/^    def get(self, request):$/;"	kind:member	line:30
 get	../MapApp/views.py	/^    def get(self, request):$/;"	kind:member	line:109
 get	../MapApp/views.py	/^    def get(self, request):$/;"	kind:member	line:136
@@ -158,12 +158,12 @@ operations	../MapApp/migrations/0004_registerview.py	/^    operations = [$/;"	ki
 operations	../MapApp/migrations/0005_auto_20171006_1828.py	/^    operations = [$/;"	kind:variable	line:14
 options	../MapApp/migrations/0004_registerview.py	/^            options={$/;"	kind:variable	line:37
 owner	../MapApp/models.py	/^    owner = ForeignKey(User, on_delete=CASCADE)$/;"	kind:variable	line:35
-parser_classes	../MapApi/rest.py	/^    parser_classes = (JSONParser,)$/;"	kind:variable	line:63
+parser_classes	../MapApi/rest.py	/^    parser_classes = (JSONParser,)$/;"	kind:variable	line:69
 parser_classes	../MapApi/views.py	/^    parser_classes = (parsers.FormParser, parsers.MultiPartParser, parsers.JSONParser,)$/;"	kind:variable	line:69
 password	../MapApp/forms.py	/^    password = forms.CharField(label="Password", min_length=5, widget=forms.PasswordInput, )$/;"	kind:variable	line:11
-permission_classes	../MapApi/rest.py	/^    permission_classes = ()$/;"	kind:variable	line:62
+permission_classes	../MapApi/rest.py	/^    permission_classes = ()$/;"	kind:variable	line:68
 permission_classes	../MapApi/views.py	/^    permission_classes = ()$/;"	kind:variable	line:68
-post	../MapApi/rest.py	/^    def post(self, request, format=None):$/;"	kind:member	line:75
+post	../MapApi/rest.py	/^    def post(self, request, format=None):$/;"	kind:member	line:81
 post	../MapApi/views.py	/^    def post(self, request, *args, **kwargs):$/;"	kind:member	line:34
 post	../MapApi/views.py	/^    def post(self, request, *args, **kwargs):$/;"	kind:member	line:73
 post	../MapApp/views.py	/^    def post(self, request):$/;"	kind:member	line:118
@@ -172,21 +172,21 @@ post	../MapApp/views.py	/^    def post(self, request):$/;"	kind:member	line:60
 post	../MapApp/views.py	/^    def post(self, request):$/;"	kind:member	line:91
 publishDate	../MapApp/models.py	/^    publishDate = DateTimeField(null=False, auto_now_add=True)$/;"	kind:variable	line:36
 ready	../MapApi/apps.py	/^    def ready(self):$/;"	kind:member	line:8
-renderer_classes	../MapApi/rest.py	/^    renderer_classes = (JSONRenderer,)$/;"	kind:variable	line:64
+renderer_classes	../MapApi/rest.py	/^    renderer_classes = (JSONRenderer,)$/;"	kind:variable	line:70
 renderer_classes	../MapApi/views.py	/^    renderer_classes = (renderers.JSONRenderer,)$/;"	kind:variable	line:70
 rest.py	../MapApi/rest.py	1;"	kind:file	line:1
 save	../MapApp/forms.py	/^    def save(self, commit=True):$/;"	kind:member	line:44
 serializer_class	../MapApi/views.py	/^    serializer_class = AuthTokenSerializer$/;"	kind:variable	line:71
-serializer_classes	../MapApi/rest.py	/^    serializer_classes = (MapEntitySerializer,)$/;"	kind:variable	line:65
+serializer_classes	../MapApi/rest.py	/^    serializer_classes = (MapEntitySerializer,)$/;"	kind:variable	line:71
 serializers.py	../MapApi/serializers.py	1;"	kind:file	line:1
 setLocationField	../MapApp/models.py	/^    def setLocationField(self, lat, lng) :$/;"	kind:member	line:44
 settings.py	../MapEngine/settings.py	1;"	kind:file	line:1
 signals.py	../MapApi/signals.py	1;"	kind:file	line:1
 tests.py	../MapApi/tests.py	1;"	kind:file	line:1
 tests.py	../MapApp/tests.py	1;"	kind:file	line:1
-throttle_classes	../MapApi/rest.py	/^    throttle_classes = ()$/;"	kind:variable	line:61
+throttle_classes	../MapApi/rest.py	/^    throttle_classes = ()$/;"	kind:variable	line:67
 throttle_classes	../MapApi/views.py	/^    throttle_classes = ()$/;"	kind:variable	line:67
-update	../MapApi/rest.py	/^    def update(self,  instance, validated_data):$/;"	kind:member	line:29
+update	../MapApi/rest.py	/^    def update(self,  instance, validated_data):$/;"	kind:member	line:38
 updateSession	../MapApi/views.py	/^    def updateSession(self, request):$/;"	kind:member	line:61
 urlpatterns	../MapApi/urls.py	/^urlpatterns = [$/;"	kind:variable	line:8
 urlpatterns	../MapApp/urls.py	/^urlpatterns = [$/;"	kind:variable	line:8
