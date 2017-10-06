@@ -67,7 +67,7 @@ class MapView(View):
         # pprint.pprint(reverse('map'))
         if request.user.is_authenticated():
             tokenUser = request.user
-            token = Token.objects.get(user=tokenUser)
+            token = Token.objects.get(user=request.data.get('authToken'))
             token.key
         return render(request, 'MapApp/map.html', {
             "authToken" : token.key
