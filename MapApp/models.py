@@ -1,58 +1,55 @@
-from django.db import models
-from django.contrib.gis.db import models
-from django.contrib.gis.geos import GEOSGeometry
-from django.contrib.auth.models import User;
 import datetime
-from datetime import datetime
 import uuid
+from datetime import datetime
+
+from django.conf import settings
+from django.contrib.auth.models import User
+from django.contrib.gis.db.models import PointField, GeoManager
+from django.contrib.gis.geos import GEOSGeometry
+from django.db.models import Model, CharField, ForeignKey,\
+    TextField, DateTimeField, UUIDField, CASCADE, OneToOneField
+from django.dispatch import receiver
+from rest_framework import parsers, renderers
+from rest_framework.authtoken.models import Token
+from rest_framework.authtoken.serializers import AuthTokenSerializer
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
+from MapApi import signals
+
 
 # Create your models here.
-class EventType(models.Model):
-    name = models.CharField(null=False, max_length=30)
+class EventType(Model):
+    name = CharField(null=False, max_length=30)
 
     def __str__(self):
         return str(self.name)
 
-class MapEntity(models.Model):
-    # Name and type are required
-    # entityName = models.TextField(null=False)
-    # entityType = models.TextField(null=False)
+class MapEntity(Model):
+    
+    # entityName = CharField(max_length=60, help_text="Insert name here")
+    entityType = CharField(max_length=60, help_text="Insert name here")
+    # entityType = ForeignKey(EventType, help_text="What type of event is it?")
 
+    # entityDescription = TextField(max_length=300, help_text="Very awesome party at my place")
+    owner = ForeignKey(User, on_delete=CASCADE)
+    publishDate = DateTimeField(null=False, auto_now_add=True)
+    # lastModDate = DateTimeField(null=True, auto_now=True)
 
-    entityName = models.CharField(max_length=60, help_text="Insert name here")
-    entityType = models.ForeignKey(EventType, help_text="What type of event is it?")
-    entityDescription = models.TextField(max_length=300, help_text="Very awesome party at my place")
-    owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    # uuid = UUIDField(default=uuid.uuid4, editable=False)
 
-    # set the publish date on creation
-    publishDate = models.DateTimeField(null=False, auto_now_add=True)
-
-    # time markers for start/end -> can be edited prior to start time
-    # startDate = models.DateTimeField(null=True, blank=False)
-    # endDate = models.DateTimeField(null=True, blank=True)
-
-    # auto update on last save
-    lastModDate = models.DateTimeField(null=True, auto_now=True)
-
-    uuid = models.UUIDField(default=uuid.uuid4, editable=False)
-
-
-    # this has to be a proper GeoField
-    # locLat = models.FloatField()
-    # locLong = models.FloatField()
-    # srid=4326 is compatible with google maps
-    geoLocationField = models.PointField(srid=4326)
-    objects = models.GeoManager()
+    geoLocationField = PointField(srid=4326)
+    objects = GeoManager()
 
     def setLocationField(self, lat, lng) :
         self.geoLocationField = GEOSGeometry('POINT(' + str(lng)  + ' '+ str(lat)  + ')', srid=4326)
 
     # json encode maybe?!
     def __str__(self):
-        return str(self.entityName)
+        return str(self.entityType + ":::" + str(self.geoLocationField))
 
 
-class Player(models.Model):
-    user = models.OneToOneField(User)
-    lastLocation = models.PointField(srid=4326)
-    objects = models.GeoManager()
+class Player(Model):
+    user = OneToOneField(User)
+    lastLocation = PointField(srid=4326)
+    objects = GeoManager()

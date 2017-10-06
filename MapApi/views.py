@@ -1,20 +1,32 @@
-from django.shortcuts import *
-from django.core import *
-import django.core.serializers
-from django.http import *
-from django.views.generic import *
-from django.contrib.gis.serializers import geojson
-from django.contrib.gis.geos import GEOSGeometry
+import json
 import pprint
 import time
 
-from django.contrib.auth.decorators import *
+import django.core.serializers
 from django.contrib.auth import *
-import json
+from django.contrib.auth.decorators import *
+from django.contrib.gis.geos import GEOSGeometry
+from django.contrib.gis.serializers import geojson
+from django.core import *
+from django.http import *
+from django.shortcuts import *
+from django.views.decorators.csrf import csrf_exempt
+from django.views.generic import *
+from rest_framework import parsers, renderers
+from rest_framework.authtoken.models import Token
+# from rest_framework.authtoken.models import Token
+from rest_framework.authtoken.serializers import AuthTokenSerializer
+from rest_framework_gis.serializers import GeoFeatureModelSerializer,GeoFeatureModelListSerializer 
+from rest_framework_gis.serializers import ListSerializer, ModelSerializer
+from rest_framework.serializers import Serializer, FloatField, CharField
+from rest_framework.serializers import DecimalField, IntegerField, DateTimeField
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
 import MapApp
 
 
-class ApiView(View):
+class FakeApiView(View):
     def get(self, request):
         data = django.core.serializers.serialize("geojson", MapApp.models.MapEntity.objects.all())
         return HttpResponse(data)
@@ -47,12 +59,39 @@ class ApiView(View):
         pass
 
     def updateSession(self, request):
+  
         pass
 
-class EventQuery(View):
-    def get(self, request):
-        return HttpResponse("123");
 
+class ObtainAuthToken(APIView):
+    throttle_classes = ()
+    permission_classes = ()
+    parser_classes = (parsers.FormParser, parsers.MultiPartParser, parsers.JSONParser,)
+    renderer_classes = (renderers.JSONRenderer,)
+    serializer_class = AuthTokenSerializer
 
-    def post(self, request):
-        return HttpResponse("123");
+    def post(self, request, *args, **kwargs):
+        serializer = self.serializer_class(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        user = serializer.validated_data['user']
+        # Token.objects
+        
+        # token, created = Token.objects.create(user=user)
+        doDelete = True
+        try:
+            currentToken = Token.objects.get(user=user)
+        # TODO 
+        except Exception:
+            doDelete = False
+
+        if doDelete:
+            print("Renewing user token")
+            currentToken.delete()
+        else :
+            print("Attempting to create new user token")
+
+        token = Token.objects.create(user=user)
+
+        return Response({'token': token.key})
+    
+

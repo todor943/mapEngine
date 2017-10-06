@@ -6,107 +6,129 @@
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
 0001_initial.py	../MapApp/migrations/0001_initial.py	1;"	kind:file	line:1
 0002_auto_20160420_2128.py	../MapApp/migrations/0002_auto_20160420_2128.py	1;"	kind:file	line:1
-ALLOWED_HOSTS	../MapEngine/settings.py	/^ALLOWED_HOSTS = []$/;"	kind:variable	line:34
-ApiView	../MapApi/views.py	/^class ApiView(View):$/;"	kind:class	line:17
+0003_auto_20171002_1846.py	../MapApp/migrations/0003_auto_20171002_1846.py	1;"	kind:file	line:1
+0004_registerview.py	../MapApp/migrations/0004_registerview.py	1;"	kind:file	line:1
+0005_auto_20171006_1828.py	../MapApp/migrations/0005_auto_20171006_1828.py	1;"	kind:file	line:1
+ALLOWED_HOSTS	../MapEngine/settings.py	/^ALLOWED_HOSTS = [$/;"	kind:variable	line:34
 BASE_DIR	../MapEngine/settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	kind:variable	line:22
-DATABASES	../MapEngine/settings.py	/^DATABASES = {$/;"	kind:variable	line:88
+DATABASES	../MapEngine/settings.py	/^DATABASES = {$/;"	kind:variable	line:105
 DEBUG	../MapEngine/settings.py	/^DEBUG = True$/;"	kind:variable	line:32
-DEBUG_TOOLBAR_CONFIG	../MapEngine/settings.py	/^DEBUG_TOOLBAR_CONFIG = {$/;"	kind:variable	line:123
-EventDetail	../MapApp/views.py	/^class EventDetail(View):$/;"	kind:class	line:126
-EventForm	../MapApp/forms.py	/^class EventForm(ModelForm):$/;"	kind:class	line:11
-EventQuery	../MapApi/views.py	/^class EventQuery(View):$/;"	kind:class	line:52
-EventType	../MapApp/models.py	/^class EventType(models.Model):$/;"	kind:class	line:10
-INSTALLED_APPS	../MapEngine/settings.py	/^INSTALLED_APPS = ($/;"	kind:variable	line:39
-IndexView	../MapApp/views.py	/^class IndexView(View):$/;"	kind:class	line:51
-LANGUAGE_CODE	../MapEngine/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	kind:variable	line:103
-LOGIN_URL	../MapEngine/settings.py	/^LOGIN_URL = '\/login\/'$/;"	kind:variable	line:118
-LoginForm	../MapApp/forms.py	/^class LoginForm(forms.Form):$/;"	kind:class	line:7
-LoginView	../MapApp/views.py	/^class LoginView(View):$/;"	kind:class	line:17
-LogoutView	../MapApp/views.py	/^class LogoutView(View):$/;"	kind:class	line:34
-MIDDLEWARE_CLASSES	../MapEngine/settings.py	/^MIDDLEWARE_CLASSES = ($/;"	kind:variable	line:51
-MapEntity	../MapApp/models.py	/^class MapEntity(models.Model):$/;"	kind:class	line:16
-MapView	../MapApp/views.py	/^class MapView(View):$/;"	kind:class	line:44
-MapapiConfig	../MapApi/apps.py	/^class MapapiConfig(AppConfig):$/;"	kind:class	line:6
-Meta	../MapApp/forms.py	/^    class Meta:$/;"	kind:class	line:12
-Meta	../MapApp/forms.py	/^    class Meta:$/;"	kind:class	line:25
+DEBUG_TOOLBAR_CONFIG	../MapEngine/settings.py	/^DEBUG_TOOLBAR_CONFIG = {$/;"	kind:variable	line:140
+EventDetail	../MapApp/views.py	/^class EventDetail(View):$/;"	kind:class	line:144
+EventQuery	../MapApi/rest.py	/^class EventQuery(APIView):$/;"	kind:class	line:60
+EventType	../MapApp/models.py	/^class EventType(Model):$/;"	kind:class	line:22
+FakeApiView	../MapApi/views.py	/^class FakeApiView(View):$/;"	kind:class	line:29
+INSTALLED_APPS	../MapEngine/settings.py	/^INSTALLED_APPS = ($/;"	kind:variable	line:44
+IndexView	../MapApp/views.py	/^class IndexView(View):$/;"	kind:class	line:72
+LANGUAGE_CODE	../MapEngine/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	kind:variable	line:120
+LOGIN_URL	../MapEngine/settings.py	/^LOGIN_URL = '\/login\/'$/;"	kind:variable	line:135
+LoginForm	../MapApp/forms.py	/^class LoginForm(forms.Form):$/;"	kind:class	line:9
+LoginView	../MapApp/views.py	/^class LoginView(View):$/;"	kind:class	line:27
+LogoutView	../MapApp/views.py	/^class LogoutView(View):$/;"	kind:class	line:55
+MIDDLEWARE_CLASSES	../MapEngine/settings.py	/^MIDDLEWARE_CLASSES = ($/;"	kind:variable	line:68
+MapEntity	../MapApp/models.py	/^class MapEntity(Model):$/;"	kind:class	line:28
+MapEntitySerializer	../MapApi/rest.py	/^class MapEntitySerializer(Serializer):$/;"	kind:class	line:15
+MapView	../MapApp/views.py	/^class MapView(View):$/;"	kind:class	line:65
+MapapiConfig	../MapApi/apps.py	/^class MapapiConfig(AppConfig):$/;"	kind:class	line:5
+Meta	../MapApp/forms.py	/^    class Meta:$/;"	kind:class	line:28
 Migration	../MapApp/migrations/0001_initial.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:11
 Migration	../MapApp/migrations/0002_auto_20160420_2128.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:10
-MyEvents	../MapApp/views.py	/^class MyEvents(View):$/;"	kind:class	line:117
-NewEventView	../MapApp/views.py	/^class NewEventView(View):$/;"	kind:class	line:59
-PROJECT_PATH	../MapEngine/settings.py	/^PROJECT_PATH = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))$/;"	kind:variable	line:86
-Player	../MapApp/models.py	/^class Player(models.Model):$/;"	kind:class	line:55
-ROOT_URLCONF	../MapEngine/settings.py	/^ROOT_URLCONF = 'MapEngine.urls'$/;"	kind:variable	line:63
-RegisterForm	../MapApp/forms.py	/^class RegisterForm(ModelForm):$/;"	kind:class	line:24
-RegisterView	../MapApp/views.py	/^class RegisterView(View):$/;"	kind:class	line:87
+Migration	../MapApp/migrations/0003_auto_20171002_1846.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:9
+Migration	../MapApp/migrations/0004_registerview.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:12
+Migration	../MapApp/migrations/0005_auto_20171006_1828.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:8
+MyEvents	../MapApp/views.py	/^class MyEvents(View):$/;"	kind:class	line:135
+NewEventView	../MapApp/views.py	/^class NewEventView(View):$/;"	kind:class	line:80
+ObtainAuthToken	../MapApi/views.py	/^class ObtainAuthToken(APIView):$/;"	kind:class	line:66
+PROJECT_PATH	../MapEngine/settings.py	/^PROJECT_PATH = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))$/;"	kind:variable	line:103
+Player	../MapApp/models.py	/^class Player(Model):$/;"	kind:class	line:52
+REST_FRAMEWORK	../MapEngine/settings.py	/^REST_FRAMEWORK = {$/;"	kind:variable	line:59
+ROOT_URLCONF	../MapEngine/settings.py	/^ROOT_URLCONF = 'MapEngine.urls'$/;"	kind:variable	line:80
+RegisterForm	../MapApp/forms.py	/^class RegisterForm(ModelForm):$/;"	kind:class	line:27
+RegisterView	../MapApp/views.py	/^class RegisterView(AbstractUser, View):$/;"	kind:class	line:108
 SECRET_KEY	../MapEngine/settings.py	/^SECRET_KEY = 'k2bme$82rqch#dc)5vn29mas76338=qhr@33ur(8ht+t($a&u2'$/;"	kind:variable	line:29
-SPATIALITE_LIBRARY_PATH	../MapEngine/settings.py	/^SPATIALITE_LIBRARY_PATH = 'mod_spatialite'$/;"	kind:variable	line:36
-STATICFILES_DIRS	../MapEngine/settings.py	/^STATICFILES_DIRS = ($/;"	kind:variable	line:119
-STATIC_URL	../MapEngine/settings.py	/^STATIC_URL = '\/static\/'$/;"	kind:variable	line:117
-TEMPLATES	../MapEngine/settings.py	/^TEMPLATES = [$/;"	kind:variable	line:65
-TIME_ZONE	../MapEngine/settings.py	/^TIME_ZONE = 'UTC'$/;"	kind:variable	line:105
-USE_I18N	../MapEngine/settings.py	/^USE_I18N = True$/;"	kind:variable	line:107
-USE_L10N	../MapEngine/settings.py	/^USE_L10N = True$/;"	kind:variable	line:109
-USE_TZ	../MapEngine/settings.py	/^USE_TZ = True$/;"	kind:variable	line:111
-WSGI_APPLICATION	../MapEngine/settings.py	/^WSGI_APPLICATION = 'MapEngine.wsgi.application'$/;"	kind:variable	line:81
+SPATIALITE_LIBRARY_PATH	../MapEngine/settings.py	/^SPATIALITE_LIBRARY_PATH = 'mod_spatialite'$/;"	kind:variable	line:41
+STATICFILES_DIRS	../MapEngine/settings.py	/^STATICFILES_DIRS = ($/;"	kind:variable	line:136
+STATIC_URL	../MapEngine/settings.py	/^STATIC_URL = '\/static\/'$/;"	kind:variable	line:134
+TEMPLATES	../MapEngine/settings.py	/^TEMPLATES = [$/;"	kind:variable	line:82
+TIME_ZONE	../MapEngine/settings.py	/^TIME_ZONE = 'UTC'$/;"	kind:variable	line:122
+USE_I18N	../MapEngine/settings.py	/^USE_I18N = True$/;"	kind:variable	line:124
+USE_L10N	../MapEngine/settings.py	/^USE_L10N = True$/;"	kind:variable	line:126
+USE_TZ	../MapEngine/settings.py	/^USE_TZ = True$/;"	kind:variable	line:128
+WSGI_APPLICATION	../MapEngine/settings.py	/^WSGI_APPLICATION = 'MapEngine.wsgi.application'$/;"	kind:variable	line:98
 __init__.py	../MapApi/__init__.py	1;"	kind:file	line:1
 __init__.py	../MapApi/migrations/__init__.py	1;"	kind:file	line:1
 __init__.py	../MapApp/__init__.py	1;"	kind:file	line:1
 __init__.py	../MapApp/migrations/__init__.py	1;"	kind:file	line:1
 __init__.py	../MapEngine/__init__.py	1;"	kind:file	line:1
-__unicode__	../MapApp/models.py	/^    def __unicode__(self):$/;"	kind:member	line:13
-__unicode__	../MapApp/models.py	/^    def __unicode__(self):$/;"	kind:member	line:51
+__str__	../MapApp/models.py	/^    def __str__(self):$/;"	kind:member	line:25
+__str__	../MapApp/models.py	/^    def __str__(self):$/;"	kind:member	line:48
 admin.py	../MapApi/admin.py	1;"	kind:file	line:1
 admin.py	../MapApp/admin.py	1;"	kind:file	line:1
 application	../MapEngine/wsgi.py	/^application = get_wsgi_application()$/;"	kind:variable	line:16
 apps.py	../MapApi/apps.py	1;"	kind:file	line:1
-clean	../MapApp/forms.py	/^    def clean(self):$/;"	kind:member	line:32
+bases	../MapApp/migrations/0004_registerview.py	/^            bases=(models.Model, django.views.generic.base.View),$/;"	kind:variable	line:42
+clean	../MapApp/forms.py	/^    def clean(self):$/;"	kind:member	line:35
+create	../MapApi/rest.py	/^    def create(self, validated_data):$/;"	kind:member	line:22
+create_auth_token	../MapApi/models.py	/^def create_auth_token(sender, instance=None, created=False, **kwargs):$/;"	kind:function	line:10
 dependencies	../MapApp/migrations/0001_initial.py	/^    dependencies = [$/;"	kind:variable	line:15
 dependencies	../MapApp/migrations/0002_auto_20160420_2128.py	/^    dependencies = [$/;"	kind:variable	line:12
-endDate	../MapApp/models.py	/^    endDate = models.DateTimeField(null=True, blank=True)$/;"	kind:variable	line:32
-entityDescription	../MapApp/models.py	/^    entityDescription = models.TextField(max_length=300, help_text="Very awesome party at my place")$/;"	kind:variable	line:24
-entityName	../MapApp/models.py	/^    entityName = models.CharField(max_length=60, help_text="Insert name here")$/;"	kind:variable	line:22
-entityType	../MapApp/models.py	/^    entityType = models.ForeignKey(EventType, help_text="What type of event is it?")$/;"	kind:variable	line:23
+dependencies	../MapApp/migrations/0003_auto_20171002_1846.py	/^    dependencies = [$/;"	kind:variable	line:11
+dependencies	../MapApp/migrations/0004_registerview.py	/^    dependencies = [$/;"	kind:variable	line:14
+dependencies	../MapApp/migrations/0005_auto_20171006_1828.py	/^    dependencies = [$/;"	kind:variable	line:10
+entityType	../MapApi/rest.py	/^    entityType = CharField(max_length=20, help_text="Insert type here")$/;"	kind:variable	line:18
+entityType	../MapApp/models.py	/^    entityType = CharField(max_length=60, help_text="Insert name here")$/;"	kind:variable	line:31
 field	../MapApp/migrations/0002_auto_20160420_2128.py	/^            field=models.CharField(help_text=b'Insert name here', max_length=60),$/;"	kind:variable	line:35
 field	../MapApp/migrations/0002_auto_20160420_2128.py	/^            field=models.DateTimeField(blank=True, help_text='', null=True),$/;"	kind:variable	line:25
 field	../MapApp/migrations/0002_auto_20160420_2128.py	/^            field=models.ForeignKey(help_text=b'What type of event is it?', on_delete=django.db.models.deletion.CASCADE, to='MapApp.EventType'),$/;"	kind:variable	line:40
 field	../MapApp/migrations/0002_auto_20160420_2128.py	/^            field=models.TextField(help_text=b'Very awesome party at my place', max_length=300),$/;"	kind:variable	line:30
 field	../MapApp/migrations/0002_auto_20160420_2128.py	/^            field=models.UUIDField(default=uuid.uuid4, editable=False, help_text=''),$/;"	kind:variable	line:20
-fields	../MapApp/forms.py	/^        fields = ['entityName' ,'entityType', 'entityDescription', 'startDate', 'endDate']$/;"	kind:variable	line:14
-fields	../MapApp/forms.py	/^        fields = ['username' ,'password']$/;"	kind:variable	line:27
+field	../MapApp/migrations/0003_auto_20171002_1846.py	/^            field=models.CharField(help_text='Insert name here', max_length=60),$/;"	kind:variable	line:32
+field	../MapApp/migrations/0003_auto_20171002_1846.py	/^            field=models.ForeignKey(help_text='What type of event is it?', on_delete=django.db.models.deletion.CASCADE, to='MapApp.EventType'),$/;"	kind:variable	line:37
+field	../MapApp/migrations/0003_auto_20171002_1846.py	/^            field=models.TextField(help_text='Very awesome party at my place', max_length=300),$/;"	kind:variable	line:27
+field	../MapApp/migrations/0005_auto_20171006_1828.py	/^            field=models.CharField(help_text='Insert name here', max_length=60),$/;"	kind:variable	line:34
+fields	../MapApp/forms.py	/^        fields = ['username' ,'password']$/;"	kind:variable	line:30
 fields	../MapApp/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:22
 fields	../MapApp/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:29
 fields	../MapApp/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:44
+fields	../MapApp/migrations/0004_registerview.py	/^            fields=[$/;"	kind:variable	line:22
 forms.py	../MapApp/forms.py	1;"	kind:file	line:1
-geoLocationField	../MapApp/models.py	/^    geoLocationField = models.PointField(srid=4326)$/;"	kind:variable	line:44
-get	../MapApi/views.py	/^    def get(self, request):$/;"	kind:member	line:18
-get	../MapApi/views.py	/^    def get(self, request):$/;"	kind:member	line:53
-get	../MapApp/views.py	/^    def get(self, request):$/;"	kind:member	line:118
-get	../MapApp/views.py	/^    def get(self, request):$/;"	kind:member	line:127
-get	../MapApp/views.py	/^    def get(self, request):$/;"	kind:member	line:18
-get	../MapApp/views.py	/^    def get(self, request):$/;"	kind:member	line:35
-get	../MapApp/views.py	/^    def get(self, request):$/;"	kind:member	line:45
-get	../MapApp/views.py	/^    def get(self, request):$/;"	kind:member	line:52
-get	../MapApp/views.py	/^    def get(self, request):$/;"	kind:member	line:60
-get	../MapApp/views.py	/^    def get(self, request):$/;"	kind:member	line:88
-getEventsInRadius	../MapApi/views.py	/^    def getEventsInRadius(self, centerPnt, distance):$/;"	kind:member	line:46
-handleRequest	../MapApi/views.py	/^    def handleRequest(self, request):$/;"	kind:member	line:42
+geoLocationField	../MapApp/models.py	/^    geoLocationField = PointField(srid=4326)$/;"	kind:variable	line:41
+get	../MapApi/rest.py	/^    def get(self, request, format=None):$/;"	kind:member	line:67
+get	../MapApi/views.py	/^    def get(self, request):$/;"	kind:member	line:30
+get	../MapApp/views.py	/^    def get(self, request):$/;"	kind:member	line:109
+get	../MapApp/views.py	/^    def get(self, request):$/;"	kind:member	line:136
+get	../MapApp/views.py	/^    def get(self, request):$/;"	kind:member	line:145
+get	../MapApp/views.py	/^    def get(self, request):$/;"	kind:member	line:28
+get	../MapApp/views.py	/^    def get(self, request):$/;"	kind:member	line:56
+get	../MapApp/views.py	/^    def get(self, request):$/;"	kind:member	line:66
+get	../MapApp/views.py	/^    def get(self, request):$/;"	kind:member	line:73
+get	../MapApp/views.py	/^    def get(self, request):$/;"	kind:member	line:81
+getEventsInRadius	../MapApi/views.py	/^    def getEventsInRadius(self, centerPnt, distance):$/;"	kind:member	line:58
+handleRequest	../MapApi/views.py	/^    def handleRequest(self, request):$/;"	kind:member	line:54
 initial	../MapApp/migrations/0001_initial.py	/^    initial = True$/;"	kind:variable	line:13
-lastLocation	../MapApp/models.py	/^    lastLocation = models.PointField(srid=4326)$/;"	kind:variable	line:57
-lastModDate	../MapApp/models.py	/^    lastModDate = models.DateTimeField(null=True, auto_now=True)$/;"	kind:variable	line:35
-locLat	../MapApp/forms.py	/^    locLat = forms.FloatField(widget=forms.HiddenInput())$/;"	kind:variable	line:21
-locLong	../MapApp/forms.py	/^    locLong = forms.FloatField(widget=forms.HiddenInput())$/;"	kind:variable	line:22
-locationToPoint	../MapApi/views.py	/^    def locationToPoint(self, position):$/;"	kind:member	line:39
+lastLocation	../MapApp/models.py	/^    lastLocation = PointField(srid=4326)$/;"	kind:variable	line:54
+locationToPoint	../MapApi/views.py	/^    def locationToPoint(self, position):$/;"	kind:member	line:51
 manage.py	../manage.py	1;"	kind:file	line:1
-model	../MapApp/forms.py	/^        model = MapEntity$/;"	kind:variable	line:13
-model	../MapApp/forms.py	/^        model = User$/;"	kind:variable	line:26
+managers	../MapApp/migrations/0004_registerview.py	/^            managers=[$/;"	kind:variable	line:43
+model	../MapApp/forms.py	/^        model = User$/;"	kind:variable	line:29
 model_name	../MapApp/migrations/0002_auto_20160420_2128.py	/^            model_name='mapentity',$/;"	kind:variable	line:18
 model_name	../MapApp/migrations/0002_auto_20160420_2128.py	/^            model_name='mapentity',$/;"	kind:variable	line:23
 model_name	../MapApp/migrations/0002_auto_20160420_2128.py	/^            model_name='mapentity',$/;"	kind:variable	line:28
 model_name	../MapApp/migrations/0002_auto_20160420_2128.py	/^            model_name='mapentity',$/;"	kind:variable	line:33
 model_name	../MapApp/migrations/0002_auto_20160420_2128.py	/^            model_name='mapentity',$/;"	kind:variable	line:38
+model_name	../MapApp/migrations/0003_auto_20171002_1846.py	/^            model_name='mapentity',$/;"	kind:variable	line:17
+model_name	../MapApp/migrations/0003_auto_20171002_1846.py	/^            model_name='mapentity',$/;"	kind:variable	line:21
+model_name	../MapApp/migrations/0003_auto_20171002_1846.py	/^            model_name='mapentity',$/;"	kind:variable	line:25
+model_name	../MapApp/migrations/0003_auto_20171002_1846.py	/^            model_name='mapentity',$/;"	kind:variable	line:30
+model_name	../MapApp/migrations/0003_auto_20171002_1846.py	/^            model_name='mapentity',$/;"	kind:variable	line:35
+model_name	../MapApp/migrations/0005_auto_20171006_1828.py	/^            model_name='mapentity',$/;"	kind:variable	line:16
+model_name	../MapApp/migrations/0005_auto_20171006_1828.py	/^            model_name='mapentity',$/;"	kind:variable	line:20
+model_name	../MapApp/migrations/0005_auto_20171006_1828.py	/^            model_name='mapentity',$/;"	kind:variable	line:24
+model_name	../MapApp/migrations/0005_auto_20171006_1828.py	/^            model_name='mapentity',$/;"	kind:variable	line:28
+model_name	../MapApp/migrations/0005_auto_20171006_1828.py	/^            model_name='mapentity',$/;"	kind:variable	line:32
 models.py	../MapApi/models.py	1;"	kind:file	line:1
 models.py	../MapApp/models.py	1;"	kind:file	line:1
-name	../MapApi/apps.py	/^    name = 'MapApi'$/;"	kind:variable	line:7
+name	../MapApi/apps.py	/^    name = 'MapApi'$/;"	kind:variable	line:6
 name	../MapApp/migrations/0001_initial.py	/^            name='EventType',$/;"	kind:variable	line:21
 name	../MapApp/migrations/0001_initial.py	/^            name='MapEntity',$/;"	kind:variable	line:28
 name	../MapApp/migrations/0001_initial.py	/^            name='Player',$/;"	kind:variable	line:43
@@ -115,37 +137,68 @@ name	../MapApp/migrations/0002_auto_20160420_2128.py	/^            name='entityD
 name	../MapApp/migrations/0002_auto_20160420_2128.py	/^            name='entityName',$/;"	kind:variable	line:34
 name	../MapApp/migrations/0002_auto_20160420_2128.py	/^            name='entityType',$/;"	kind:variable	line:39
 name	../MapApp/migrations/0002_auto_20160420_2128.py	/^            name='uuid',$/;"	kind:variable	line:19
-name	../MapApp/models.py	/^    name = models.CharField(null=False, max_length=30)$/;"	kind:variable	line:11
-objects	../MapApp/models.py	/^    objects = models.GeoManager()$/;"	kind:variable	line:45
-objects	../MapApp/models.py	/^    objects = models.GeoManager()$/;"	kind:variable	line:58
+name	../MapApp/migrations/0003_auto_20171002_1846.py	/^            name='endDate',$/;"	kind:variable	line:18
+name	../MapApp/migrations/0003_auto_20171002_1846.py	/^            name='entityDescription',$/;"	kind:variable	line:26
+name	../MapApp/migrations/0003_auto_20171002_1846.py	/^            name='entityName',$/;"	kind:variable	line:31
+name	../MapApp/migrations/0003_auto_20171002_1846.py	/^            name='entityType',$/;"	kind:variable	line:36
+name	../MapApp/migrations/0003_auto_20171002_1846.py	/^            name='startDate',$/;"	kind:variable	line:22
+name	../MapApp/migrations/0004_registerview.py	/^            name='RegisterView',$/;"	kind:variable	line:21
+name	../MapApp/migrations/0005_auto_20171006_1828.py	/^            name='entityDescription',$/;"	kind:variable	line:17
+name	../MapApp/migrations/0005_auto_20171006_1828.py	/^            name='entityName',$/;"	kind:variable	line:21
+name	../MapApp/migrations/0005_auto_20171006_1828.py	/^            name='entityType',$/;"	kind:variable	line:33
+name	../MapApp/migrations/0005_auto_20171006_1828.py	/^            name='lastModDate',$/;"	kind:variable	line:25
+name	../MapApp/migrations/0005_auto_20171006_1828.py	/^            name='uuid',$/;"	kind:variable	line:29
+name	../MapApp/models.py	/^    name = CharField(null=False, max_length=30)$/;"	kind:variable	line:23
+objects	../MapApp/models.py	/^    objects = GeoManager()$/;"	kind:variable	line:42
+objects	../MapApp/models.py	/^    objects = GeoManager()$/;"	kind:variable	line:55
 operations	../MapApp/migrations/0001_initial.py	/^    operations = [$/;"	kind:variable	line:19
 operations	../MapApp/migrations/0002_auto_20160420_2128.py	/^    operations = [$/;"	kind:variable	line:16
-owner	../MapApp/models.py	/^    owner = models.ForeignKey(User, on_delete=models.CASCADE)$/;"	kind:variable	line:25
-password	../MapApp/forms.py	/^    password = forms.CharField(label="Password", min_length=7, widget=forms.PasswordInput)$/;"	kind:variable	line:9
-post	../MapApi/views.py	/^    def post(self, request):$/;"	kind:member	line:57
-post	../MapApi/views.py	/^    def post(self, request, *args, **kwargs):$/;"	kind:member	line:22
-post	../MapApp/views.py	/^    def post(self, request):$/;"	kind:member	line:26
-post	../MapApp/views.py	/^    def post(self, request):$/;"	kind:member	line:39
-post	../MapApp/views.py	/^    def post(self, request):$/;"	kind:member	line:70
-post	../MapApp/views.py	/^    def post(self, request):$/;"	kind:member	line:97
-publishDate	../MapApp/models.py	/^    publishDate = models.DateTimeField(null=False, auto_now_add=True)$/;"	kind:variable	line:28
-setLocationField	../MapApp/models.py	/^    def setLocationField(self, lat, lng) :$/;"	kind:member	line:47
+operations	../MapApp/migrations/0003_auto_20171002_1846.py	/^    operations = [$/;"	kind:variable	line:15
+operations	../MapApp/migrations/0004_registerview.py	/^    operations = [$/;"	kind:variable	line:19
+operations	../MapApp/migrations/0005_auto_20171006_1828.py	/^    operations = [$/;"	kind:variable	line:14
+options	../MapApp/migrations/0004_registerview.py	/^            options={$/;"	kind:variable	line:37
+owner	../MapApp/models.py	/^    owner = ForeignKey(User, on_delete=CASCADE)$/;"	kind:variable	line:35
+parser_classes	../MapApi/rest.py	/^    parser_classes = (JSONParser,)$/;"	kind:variable	line:63
+parser_classes	../MapApi/views.py	/^    parser_classes = (parsers.FormParser, parsers.MultiPartParser, parsers.JSONParser,)$/;"	kind:variable	line:69
+password	../MapApp/forms.py	/^    password = forms.CharField(label="Password", min_length=5, widget=forms.PasswordInput, )$/;"	kind:variable	line:11
+permission_classes	../MapApi/rest.py	/^    permission_classes = ()$/;"	kind:variable	line:62
+permission_classes	../MapApi/views.py	/^    permission_classes = ()$/;"	kind:variable	line:68
+post	../MapApi/rest.py	/^    def post(self, request, format=None):$/;"	kind:member	line:75
+post	../MapApi/views.py	/^    def post(self, request, *args, **kwargs):$/;"	kind:member	line:34
+post	../MapApi/views.py	/^    def post(self, request, *args, **kwargs):$/;"	kind:member	line:73
+post	../MapApp/views.py	/^    def post(self, request):$/;"	kind:member	line:118
+post	../MapApp/views.py	/^    def post(self, request):$/;"	kind:member	line:37
+post	../MapApp/views.py	/^    def post(self, request):$/;"	kind:member	line:60
+post	../MapApp/views.py	/^    def post(self, request):$/;"	kind:member	line:91
+publishDate	../MapApp/models.py	/^    publishDate = DateTimeField(null=False, auto_now_add=True)$/;"	kind:variable	line:36
+ready	../MapApi/apps.py	/^    def ready(self):$/;"	kind:member	line:8
+renderer_classes	../MapApi/rest.py	/^    renderer_classes = (JSONRenderer,)$/;"	kind:variable	line:64
+renderer_classes	../MapApi/views.py	/^    renderer_classes = (renderers.JSONRenderer,)$/;"	kind:variable	line:70
+rest.py	../MapApi/rest.py	1;"	kind:file	line:1
+save	../MapApp/forms.py	/^    def save(self, commit=True):$/;"	kind:member	line:44
+serializer_class	../MapApi/views.py	/^    serializer_class = AuthTokenSerializer$/;"	kind:variable	line:71
+serializer_classes	../MapApi/rest.py	/^    serializer_classes = (MapEntitySerializer,)$/;"	kind:variable	line:65
+serializers.py	../MapApi/serializers.py	1;"	kind:file	line:1
+setLocationField	../MapApp/models.py	/^    def setLocationField(self, lat, lng) :$/;"	kind:member	line:44
 settings.py	../MapEngine/settings.py	1;"	kind:file	line:1
-startDate	../MapApp/models.py	/^    startDate = models.DateTimeField(null=True, blank=False)$/;"	kind:variable	line:31
+signals.py	../MapApi/signals.py	1;"	kind:file	line:1
 tests.py	../MapApi/tests.py	1;"	kind:file	line:1
 tests.py	../MapApp/tests.py	1;"	kind:file	line:1
-updateSession	../MapApi/views.py	/^    def updateSession(self, request):$/;"	kind:member	line:49
-urlpatterns	../MapApi/urls.py	/^urlpatterns = [$/;"	kind:variable	line:5
-urlpatterns	../MapApp/urls.py	/^urlpatterns = [$/;"	kind:variable	line:6
+throttle_classes	../MapApi/rest.py	/^    throttle_classes = ()$/;"	kind:variable	line:61
+throttle_classes	../MapApi/views.py	/^    throttle_classes = ()$/;"	kind:variable	line:67
+update	../MapApi/rest.py	/^    def update(self,  instance, validated_data):$/;"	kind:member	line:29
+updateSession	../MapApi/views.py	/^    def updateSession(self, request):$/;"	kind:member	line:61
+urlpatterns	../MapApi/urls.py	/^urlpatterns = [$/;"	kind:variable	line:8
+urlpatterns	../MapApp/urls.py	/^urlpatterns = [$/;"	kind:variable	line:8
 urlpatterns	../MapEngine/urls.py	/^urlpatterns = [$/;"	kind:variable	line:19
 urls.py	../MapApi/urls.py	1;"	kind:file	line:1
 urls.py	../MapApp/urls.py	1;"	kind:file	line:1
 urls.py	../MapEngine/urls.py	1;"	kind:file	line:1
-user	../MapApp/models.py	/^    user = models.OneToOneField(User)$/;"	kind:variable	line:56
-username	../MapApp/forms.py	/^    username = forms.CharField(label="Username", min_length=7)$/;"	kind:variable	line:8
-uuid	../MapApp/models.py	/^    uuid = models.UUIDField(default=uuid.uuid4, editable=False)$/;"	kind:variable	line:37
+user	../MapApp/models.py	/^    user = OneToOneField(User)$/;"	kind:variable	line:53
+user_login	../MapApi/signals.py	/^user_login = Signal(providing_args=["request", "user"])/;"	kind:variable	line:2
+username	../MapApp/forms.py	/^    username = forms.CharField(label="Username", min_length=5)$/;"	kind:variable	line:10
 views.py	../MapApi/views.py	1;"	kind:file	line:1
 views.py	../MapApp/views.py	1;"	kind:file	line:1
-widgets	../MapApp/forms.py	/^        widgets = {$/;"	kind:variable	line:15
-widgets	../MapApp/forms.py	/^        widgets = {$/;"	kind:variable	line:28
+viewsets.py	../MapApi/viewsets.py	1;"	kind:file	line:1
+widgets	../MapApp/forms.py	/^        widgets = {$/;"	kind:variable	line:31
 wsgi.py	../MapEngine/wsgi.py	1;"	kind:file	line:1

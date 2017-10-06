@@ -1,22 +1,27 @@
-from django.shortcuts import *
-from django.core import *
-from django.http import *
-from django.views.generic import *
-from django.contrib.gis.serializers import geojson
+import json
 import pprint
 import time
 
-from django.contrib.auth.decorators import *
 from django.contrib.auth import *
-from django.utils.decorators import *
-from django.core.urlresolvers import reverse
-import json
-# from .forms import *
-from MapApp.forms import *
-from MapApp.models import *
+from django.contrib.auth.decorators import *
+from django.contrib.auth.hashers import make_password
 # from .models import *
 from django.contrib.auth.models import AbstractUser, UserManager
-from django.contrib.auth.hashers import make_password
+from django.contrib.gis.serializers import geojson
+from django.core import *
+from django.core.urlresolvers import reverse
+from django.http import *
+from django.shortcuts import *
+from django.utils.decorators import *
+from django.views.generic import *
+from rest_framework.authtoken.models import Token
+
+from MapApp.forms import *
+from MapApp.models import *
+
+from django.conf import settings
+from MapApi import signals
+from django.dispatch import receiver
 
 
 class LoginView(View):
@@ -27,7 +32,8 @@ class LoginView(View):
             return render(request, 'registration/login.html', context)
         else:
             return redirect('index')
-
+    
+    # @receiver(post_save, sender=settings.AUTH_USER_MODEL)
     def post(self, request):
         f = LoginForm(request.POST or None)
         if f.is_valid():
@@ -36,6 +42,8 @@ class LoginView(View):
                 password = f.cleaned_data['password'])
             if user is not None :
                 login(request, user)
+                signals.user_login.send(sender=None, request=request, user=request.user)
+                
         # usn = request.POST['username']
         # psw = request.POST['password']
         # # psw = make_password(psw)

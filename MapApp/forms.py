@@ -10,19 +10,19 @@ class LoginForm(forms.Form):
     username = forms.CharField(label="Username", min_length=5)
     password = forms.CharField(label="Password", min_length=5, widget=forms.PasswordInput, )
 
-class EventForm(ModelForm):
-    class Meta:
-        model = MapEntity
-        # fields = ['entityName' ,'entityType', 'entityDescription', 'startDate', 'endDate']
-        fields = ['entityName' ,'entityType', 'entityDescription']
-        widgets = {
-            #Use localization and bootstrap 3
-            # 'startDate': DateTimeWidget(attrs={'id':"dateTimeId"}, bootstrap_version=3),
-            # 'endDate': DateTimeWidget(attrs={'id':"dateTimeId"}, bootstrap_version=3)
-        }
+# class EventForm(ModelForm):
+#     class Meta:
+#         model = MapEntity
+#         # fields = ['entityName' ,'entityType', 'entityDescription', 'startDate', 'endDate']
+#         fields = ['entityName' ,'entityType', 'entityDescription']
+#         widgets = {
+#             #Use localization and bootstrap 3
+#             # 'startDate': DateTimeWidget(attrs={'id':"dateTimeId"}, bootstrap_version=3),
+#             # 'endDate': DateTimeWidget(attrs={'id':"dateTimeId"}, bootstrap_version=3)
+#         }
 
-    locLat = forms.FloatField(widget=forms.HiddenInput())
-    locLong = forms.FloatField(widget=forms.HiddenInput())
+#     locLat = forms.FloatField(widget=forms.HiddenInput())
+#     locLong = forms.FloatField(widget=forms.HiddenInput())
 
 class RegisterForm(ModelForm):
     class Meta:

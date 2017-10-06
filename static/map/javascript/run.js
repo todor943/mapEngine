@@ -54,6 +54,41 @@ function addSliderControl(map) {
     controlDiv.noUiSlider.on('update', updatePlayerRadius);
 }
 
+function addButtonsControl(map) {
+    var controlDiv = document.createElement('div');
+    controlDiv.id = 'mapButtonControls';
+
+    // create a button
+    var buttonOne = document.createElement('button');
+    buttonOne.type = "button";
+    buttonOne.id = "buttonOne";
+    buttonOne.classList = [
+        "btn btn-danger glyphicon glyphicon-heart"
+    ];
+    buttonOne.title = "RED";
+
+    var buttonTwo = document.createElement('button');
+    buttonTwo.type = "button";
+    buttonTwo.id = "buttonTwo";
+    buttonTwo.classList = [
+        "btn btn-primary glyphicon glyphicon-star"
+    ];
+    buttonTwo.title = "BLUE";
+
+    var buttonThree = document.createElement('button');
+    buttonThree.type = "button";
+    buttonThree.id = "buttonThree";
+    buttonThree.classList = [
+        "btn btn-success glyphicon glyphicon-grain"
+    ];
+    buttonThree.title = "GREEN";
+    
+    controlDiv.appendChild(buttonOne);
+    controlDiv.appendChild(buttonTwo);
+    controlDiv.appendChild(buttonThree);
+    map.controls[google.maps.ControlPosition.LEFT_CENTER].push(controlDiv);
+}
+
 function initMap() {
     map = new google.maps.Map(
       document.getElementById('map'),
@@ -69,6 +104,7 @@ function initMap() {
     });
 
     addSliderControl(map);
+    addButtonsControl(map)
 
     map.addListener('zoom_changed', captureMapState);
     map.addListener('center_changed', captureMapState);

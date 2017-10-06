@@ -31,7 +31,12 @@ SECRET_KEY = 'k2bme$82rqch#dc)5vn29mas76338=qhr@33ur(8ht+t($a&u2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['drtodor.mooo.com', 'kukavica.chickenkiller.com', '139.59.201.128', '139.59.201.129']
+ALLOWED_HOSTS = [
+    'drtodor.mooo.com', 
+    'kukavica.chickenkiller.com', 
+    'localhost',
+    '139.59.201.128', 
+    '139.59.201.129']
 
 SPATIALITE_LIBRARY_PATH = 'mod_spatialite'
 # Application definition
@@ -45,8 +50,20 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     # 'debug_toolbar',
     'django.contrib.gis',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'rest_framework_gis',
     'MapApp'
 )
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    )
+}
+
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',

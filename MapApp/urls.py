@@ -13,7 +13,7 @@ urlpatterns = [
     url(r'^register/$', views.RegisterView.as_view(), name='register'),
     url(r'^map/$', views.MapView.as_view(), name='map'),
     url(r'^manage/$', views.MyEvents.as_view(), name='manage'),
-    url(r'^newEvent/$', views.NewEventView.as_view(), name='newEventUrl'),
+    # url(r'^newEvent/$', views.NewEventView.as_view(), name='newEventUrl'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

@@ -13,3 +13,14 @@ html, body {
     margin-right: 3ex;
     /*margin-top: 10ex;*/
 }
+
+#mapButtonControls {
+    width: 5.5em; 
+}
+
+#mapButtonControls button {
+    width: 5em;
+    height: 5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
