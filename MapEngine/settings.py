@@ -36,7 +36,8 @@ ALLOWED_HOSTS = [
     'kukavica.chickenkiller.com', 
     'localhost',
     '139.59.201.128', 
-    '139.59.201.129']
+    '139.59.201.129',
+    '127.0.0.1']
 
 SPATIALITE_LIBRARY_PATH = 'mod_spatialite'
 # Application definition

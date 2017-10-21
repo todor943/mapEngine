@@ -67,7 +67,13 @@ class MapView(View):
         # pprint.pprint(reverse('map'))
         if request.user.is_authenticated():
             tokenUser = request.user
+            pprint.pprint(request)
+            pprint.pprint(request.__dict__)
+            # pprint.pprint(request)
+            # token = Token.objects.get(user=request.data.get('authToken'))
             token = Token.objects.get(user=tokenUser)
+            
+
             token.key
         return render(request, 'MapApp/map.html', {
             "authToken" : token.key
@@ -82,33 +88,33 @@ class IndexView(View):
 
 
 
-@method_decorator(login_required, name='dispatch')
-class NewEventView(View):
-    def get(self, request):
-        context = {}
-        f = EventForm();
-        context = {'form':f, 'apiUrl' : '/api/'}
-        opts = request.session.get('mapOptions', None)
-        if opts is not None:
-            context['mapOptions'] = json.dumps(opts)
-        return render(request, 'MapApp/newEvent.html', context)
+# @method_decorator(login_required, name='dispatch')
+# class NewEventView(View):
+#     def get(self, request):
+#         context = {}
+#         f = EventForm();
+#         context = {'form':f, 'apiUrl' : '/api/'}
+#         opts = request.session.get('mapOptions', None)
+#         if opts is not None:
+#             context['mapOptions'] = json.dumps(opts)
+#         return render(request, 'MapApp/newEvent.html', context)
 
 
-    def post(self, request):
-        context = {}
-        f = EventForm(request.POST or None)
-        context = {'form':f, 'apiUrl' : '/api/'}
-        opts = request.session.get('mapOptions', None)
-        if opts is not None:
-            context['mapOptions'] = json.dumps(opts)
-        if f.is_valid():
-            ment = f.save(commit=False)
-            ment.setLocationField(lat=request.POST['locLat'], lng= request.POST['locLong'])
-            ment.owner = request.user
-            ment.save()
-            pprint.pprint(ment)
-            return redirect('map')
-        return render(request, 'MapApp/newEvent.html', context)
+#     def post(self, request):
+#         context = {}
+#         f = EventForm(request.POST or None)
+#         context = {'form':f, 'apiUrl' : '/api/'}
+#         opts = request.session.get('mapOptions', None)
+#         if opts is not None:
+#             context['mapOptions'] = json.dumps(opts)
+#         if f.is_valid():
+#             ment = f.save(commit=False)
+#             ment.setLocationField(lat=request.POST['locLat'], lng= request.POST['locLong'])
+#             ment.owner = request.user
+#             ment.save()
+#             pprint.pprint(ment)
+#             return redirect('map')
+#         return render(request, 'MapApp/newEvent.html', context)
 
 
 class RegisterView(AbstractUser, View):
