@@ -177,7 +177,7 @@ function handlePosition(position) {
     // recenterMap(position);
     updatePlayerCircle();
     // if(recentering) {
-        recenterMap(position);
+        // recenterMap(position);
     // }
     captureMapState();
 }
