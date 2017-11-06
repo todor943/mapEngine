@@ -19,10 +19,11 @@ var mapOptions = {
   disableDefaultUI: true,
   center: {lat: 0, lng: 0},
   zoom: 14,
-
 };
 // var recentering = true;
 var userOptions = null;
+
+last_position = 0
 
 window.onload = initMap;
 
@@ -175,10 +176,13 @@ function handlePosition(position) {
         updatePlayer(position);
     }
     // recenterMap(position);
-    updatePlayerCircle();
-    // if(recentering) {
-        // recenterMap(position);
-    // }
+	updatePlayerCircle();
+	time_now = new Date().getTime() / 1000
+	// map centre more than 30 sec old?!
+    if(time_now - last_position > 30) {
+		recenterMap(position);
+		last_position = time_now
+    }
     captureMapState();
 }
 
@@ -278,18 +282,6 @@ function sendApiPost(data) {
         }));
 }
 
-
-// function button1(){
-//     sendApiPost("button1");    
-// }
-
-// function button2(){
-//     sendApiPost("button2");    
-// } 
-
-// function button3(){
-//     sendApiPost("button3");    
-// }
 
 function handleResult(result) {
     var data = JSON.parse(result);
