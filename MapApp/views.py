@@ -130,6 +130,7 @@ class RegisterView(AbstractUser, View):
 
         if f.is_valid():
             userInstance = f.save()
+            Token.objects.create(user=userInstance)
             pprint.pprint('valid user making')
             login(request, userInstance)
             return redirect('map')

@@ -1,7 +1,7 @@
 import json
 import pprint
 import time
-
+import datetime
 import django.core.serializers
 from django.contrib.auth import *
 from django.contrib.auth.decorators import *
@@ -28,7 +28,16 @@ import MapApp
 
 class FakeApiView(View):
     def get(self, request):
-        data = django.core.serializers.serialize("geojson", MapApp.models.MapEntity.objects.all())
+		time_filter = datetime.datetime.now() - datetime.timedelta(minutes = 60)
+			__lte=time_filter
+        # data = django.core.serializers.serialize(
+		# 	"geojson", MapApp.models.MapEntity.objects.all()
+		# )
+		data = django.core.serializers.serialize(
+			"geojson", MapApp.models.MapEntity.objects.filter(
+				publishDate__lte=time_filter
+			)
+		)
         return HttpResponse(data)
 
     def post(self, request, *args, **kwargs):
