@@ -34,6 +34,10 @@ class FakeApiView(View):
 		# data = django.core.serializers.serialize(
 		# 	"geojson", MapApp.models.MapEntity.objects.all()
 		# )
+		print("now is ", now)
+		print("earler is ", earlier)
+		pprint.pprint(now)
+		pprint.pprint(earlier)
 		data = django.core.serializers.serialize(
 			"geojson", MapApp.models.MapEntity.objects.filter(
 				publishDate__range=(earlier, now)
