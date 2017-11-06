@@ -28,20 +28,8 @@ import MapApp
 
 class FakeApiView(View):
 	def get(self, request):
-		# time_filter = datetime.datetime.now() - datetime.timedelta(hours = 1)
-		now = datetime.datetime.now()
-		earlier = now - datetime.timedelta(hours=1)
-		# data = django.core.serializers.serialize(
-		# 	"geojson", MapApp.models.MapEntity.objects.all()
-		# )
-		print("now is ", now)
-		print("earler is ", earlier)
-		pprint.pprint(now)
-		pprint.pprint(earlier)
 		data = django.core.serializers.serialize(
-			"geojson", MapApp.models.MapEntity.objects.filter(
-				publishDate__range=(earlier, now)
-			)
+			"geojson", MapApp.models.MapEntity.objects.all()
 		)
 		return HttpResponse(data)
 
@@ -58,7 +46,13 @@ class FakeApiView(View):
 			request.session['lastUpdate'] = time.time()
 			radius = requestData['radius']
 			searchPnt = self.locationToPoint(requestData['position']);
-			data =  MapApp.models.MapEntity.objects.filter(geoLocationField__distance_lte=(searchPnt, radius))
+			# now = datetime.datetime.now()
+			# earlier = now - datetime.timedelta(hours=1)
+			time_filter = datetime.datetime.now() - datetime.timedelta(hours = 1)
+			data =  MapApp.models.MapEntity.objects.filter(
+				geoLocationField__distance_lte=(searchPnt, radius),
+				publishDate__gte=time_filter
+			)
 			data = django.core.serializers.serialize("geojson", data)
 			print ("Updated the user's map state in session")
 		# print request.user.get_username()
