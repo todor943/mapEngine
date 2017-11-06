@@ -34,7 +34,7 @@ class FakeApiView(View):
 		# )
 		data = django.core.serializers.serialize(
 			"geojson", MapApp.models.MapEntity.objects.filter(
-				publishDate__lte=time_filter
+				publishDate__gte=time_filter
 			)
 		)
 		return HttpResponse(data)
