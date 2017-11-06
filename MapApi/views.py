@@ -28,13 +28,15 @@ import MapApp
 
 class FakeApiView(View):
 	def get(self, request):
-		time_filter = datetime.datetime.now() - datetime.timedelta(minutes = 60)
+		# time_filter = datetime.datetime.now() - datetime.timedelta(hours = 1)
+		now = datetime.datetime.now()
+		earlier = now - datetime.timedelta(hours=1)
 		# data = django.core.serializers.serialize(
 		# 	"geojson", MapApp.models.MapEntity.objects.all()
 		# )
 		data = django.core.serializers.serialize(
 			"geojson", MapApp.models.MapEntity.objects.filter(
-				publishDate__gte=time_filter
+				publishDate__range=(earlier, now)
 			)
 		)
 		return HttpResponse(data)
