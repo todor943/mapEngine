@@ -27,10 +27,9 @@ import MapApp
 
 
 class FakeApiView(View):
-    def get(self, request):
+	def get(self, request):
 		time_filter = datetime.datetime.now() - datetime.timedelta(minutes = 60)
-			__lte=time_filter
-        # data = django.core.serializers.serialize(
+		# data = django.core.serializers.serialize(
 		# 	"geojson", MapApp.models.MapEntity.objects.all()
 		# )
 		data = django.core.serializers.serialize(
@@ -38,71 +37,71 @@ class FakeApiView(View):
 				publishDate__lte=time_filter
 			)
 		)
-        return HttpResponse(data)
+		return HttpResponse(data)
 
-    def post(self, request, *args, **kwargs):
-        data = {}
+	def post(self, request, *args, **kwargs):
+		data = {}
 
-        if request.user.is_authenticated():
-            requestData = json.loads(request.POST['jsonData'])
-            now = time.time()
-            if 'position' not in requestData:
-                return JsonResponse({})
-            request.session['location'] = requestData['position']
-            request.session['mapOptions'] = requestData['mapOptions']
-            request.session['lastUpdate'] = time.time()
-            radius = requestData['radius']
-            searchPnt = self.locationToPoint(requestData['position']);
-            data =  MapApp.models.MapEntity.objects.filter(geoLocationField__distance_lte=(searchPnt, radius))
-            data = django.core.serializers.serialize("geojson", data)
-            print ("Updated the user's map state in session")
-        # print request.user.get_username()
-        return HttpResponse(data)
+		if request.user.is_authenticated():
+			requestData = json.loads(request.POST['jsonData'])
+			now = time.time()
+			if 'position' not in requestData:
+				return JsonResponse({})
+			request.session['location'] = requestData['position']
+			request.session['mapOptions'] = requestData['mapOptions']
+			request.session['lastUpdate'] = time.time()
+			radius = requestData['radius']
+			searchPnt = self.locationToPoint(requestData['position']);
+			data =  MapApp.models.MapEntity.objects.filter(geoLocationField__distance_lte=(searchPnt, radius))
+			data = django.core.serializers.serialize("geojson", data)
+			print ("Updated the user's map state in session")
+		# print request.user.get_username()
+		return HttpResponse(data)
 
-    def locationToPoint(self, position):
-        return GEOSGeometry('POINT(' + str(position['lng'])  + ' '+ str(position['lat'])  + ')', srid=4326)
+	def locationToPoint(self, position):
+		return GEOSGeometry('POINT(' + str(position['lng'])  + ' '+ str(position['lat'])  + ')', srid=4326)
 
-    def handleRequest(self, request):
-        pass
+	def handleRequest(self, request):
+		pass
 
 
-    def getEventsInRadius(self, centerPnt, distance):
-        pass
+	def getEventsInRadius(self, centerPnt, distance):
+		pass
 
-    def updateSession(self, request):
+	def updateSession(self, request):
   
-        pass
+		pass
 
 
 class ObtainAuthToken(APIView):
-    throttle_classes = ()
-    permission_classes = ()
-    parser_classes = (parsers.FormParser, parsers.MultiPartParser, parsers.JSONParser,)
-    renderer_classes = (renderers.JSONRenderer,)
-    serializer_class = AuthTokenSerializer
+	throttle_classes = ()
+	permission_classes = ()
+	parser_classes = (parsers.FormParser, parsers.MultiPartParser, parsers.JSONParser,)
+	renderer_classes = (renderers.JSONRenderer,)
+	serializer_class = AuthTokenSerializer
 
-    def post(self, request, *args, **kwargs):
-        serializer = self.serializer_class(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        user = serializer.validated_data['user']
-        # Token.objects
-        
-        # token, created = Token.objects.create(user=user)
-        doDelete = True
-        try:
-            currentToken = Token.objects.get(user=user)
-        # TODO 
-        except Exception:
-            doDelete = False
+	def post(self, request, *args, **kwargs):
+		serializer = self.serializer_class(data=request.data)
+		serializer.is_valid(raise_exception=True)
+		user = serializer.validated_data['user']
+		# Token.objects
+		
+		# token, created = Token.objects.create(user=user)
+		doDelete = True
+		try:
+			currentToken = Token.objects.get(user=user)
+		# TODO 
+		except Exception:
+			doDelete = False
 
-        if doDelete:
-            print("Renewing user token")
-            currentToken.delete()
-        else :
-            print("Attempting to create new user token")
+		if doDelete:
+			print("Renewing user token")
+			currentToken.delete()
+		else :
+			print("Attempting to create new user token")
 
-        token = Token.objects.create(user=user)
+		token = Token.objects.create(user=user)
 
-        return Response({'token': token.key})
-    
+		return Response({'token': token.key})
+	
 
